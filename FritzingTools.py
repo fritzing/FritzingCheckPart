@@ -4065,17 +4065,6 @@ def ProcessSvgLeafNode(FzpType, FileType, InFile, CurView, PrefixDir, Elem, Erro
 
     if Term != None:
 
-        # This looks to be a terminal definition so check it is a valid type.
-
-        if Tag in ['path', 'g']:
-
-            # Note one of the illegal terminalId types is present.
-
-            Errors.append('Error 77: File\n\'{0:s}\'\nAt line {1:s}\n\nterminalId {2:s} can\'t be a {3:s} as it won\'t work.\n'.format(
-                str(InFile), str(Elem.sourceline), str(Id), str(Tag)))
-
-        # End of if Tag in ['path']:
-
         # Since this is a terminal, check for height or width of 0 and complain
         # if so.
 
